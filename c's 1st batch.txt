@@ -1,0 +1,778 @@
+1.Write a program to check if a person is eligible to vote or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("1. Write a program to check if a person is eligible to vote or not.\n");
+	int age;
+	printf("your age?");
+	scanf("%d",&age);
+	if (age>=16)
+	{
+	printf("eligible to vote");
+	}
+	else
+	{
+	printf("X eligible to vote");	
+	} 
+}
+
+2.Write a program to find whether a number is odd or even.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("2. Write a program to find whether a number is odd or even.\n");
+	int n;
+	printf("enter any no?");
+	scanf("%d",&n);
+	if (n%2==0)
+	{
+	printf("even");
+	}
+	else
+	{
+	printf("odd");	
+	} 
+}
+
+3. Write a program that accepts three values from user and results out the greatest and smallest 
+number.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+printf("3. Write a program that accepts three values from user and results out the greatest and smallest number.\n");
+	int a,b,c;
+	printf("enter 3 no?");
+	scanf("%d%d%d",&a,&b,&c);
+	if (a>b&&a>c)
+	{
+	printf("\n%d is the greatest number\n",a);
+	}
+	else if (b>a && b>c)
+	{
+		printf("%d is the greatest number\n",b);
+	} 
+	else
+	{
+		printf("%d is the greatest number\n",c);
+	}
+	if (a<b&&a<c)
+	{
+	printf("%d is the smallest number",a);
+	}
+	else if (b<a && b<c)
+	{
+		printf("%d is the samllest number",b);
+	} 
+	else
+	{
+		printf("%d is the smallest number",c);
+	}
+}
+
+4.Write a program to check whether the given number is divisible by 5 and 9 or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("4. Write a program to check whether the given number is divisible by 5 and 9 or not.\n");
+	int n;
+	printf("enter any no?");
+	scanf("%d",&n);
+	if (n%5==0 && n%9==0)
+	{
+	printf("\n%d is divisible by both 5 and 9\n",n);
+	}
+	else
+	{
+		printf("\n%d is  X divisible by both 5 and 9\n",n);
+	}
+}
+
+5. Write a program to check whether the given number is divisible by 7 or 13 or 2 or not. 
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("5.Write a program to check whether the given number is divisible by 7 or 13 or 2 or not. \n");
+	int num;
+	printf("enter the number :");
+	scanf("%d",&num);
+	if(num%7==0)
+	{
+		printf("the given number is divisible by 7");
+	}
+	else if(num%13==0)
+	{
+		printf("the given number is divisible by 13");
+	}
+	else if(num%2==0)
+	{
+printf("the given number is divisible by 2");
+	}
+	else
+	{
+		printf("the number is not divisible by any of the given number");
+	}
+	return 0;
+}
+
+6. Write a C program to calculate profit percent or loss percent on a transaction.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("6. Write a C program to calculate profit percent or loss percent on a transaction.\n");
+	float sp, cp,profitper,lossper;
+	printf("enter cost price and selling price");
+	scanf("%f%f",&cp,&sp);
+	if (sp>cp)
+	{
+		profitper=((sp-cp)/cp)*100.0;
+			printf("profit percent=%f",profitper);
+	}
+	else
+	{
+		lossper=((cp-sp)/cp)*100.0;
+			printf("loss percent=%f",lossper);
+	}
+}
+
+7. Write a C program to input any character and check whether it is vowel or consonant.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("7. Write a C program to input any character and check whether it is vowel or consonant. \n");
+	char ch;
+	printf("enter any character:");
+	scanf("%c",&ch);
+	if(ch=='a')
+	{
+		printf("%c is a vowel ",ch);
+	}
+	else if (ch=='e')
+	{
+		printf("%c is a vowel ",ch);
+		
+	}
+	else if(ch=='i')
+	{
+		printf("%c is a vowel ",ch);
+	}
+	else if(ch=='o')
+	{
+		printf("%c is a vowel ",ch);
+	}
+	else if(ch=='u')
+	{
+		printf("%c is a vowel",ch);
+	}
+	else 
+	{
+		printf(" %c is a consonant",ch);
+	}
+	return 0;
+}
+
+8. Write a program to print the day of the week's name using switch case.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("8. Write a program to print the day of the week's name using switch case.\n");
+	    int day;
+    	printf("Enter a number (1-7) to get the day of the week: ");
+switch (day)
+ 	{
+ 	       case 1:
+    	scanf("%d", &day);
+       		printf("Sunday\n");
+       		     break;
+        case 2:
+            printf("Monday\n");
+            break;
+        case 3:
+            printf("Tuesday\n");
+            break;
+        case 4:
+            printf("Wednesday\n");
+            break;
+        case 5:
+            printf("Thursday\n");
+            break;
+        case 6:
+            printf("Friday\n");
+            break;
+        case 7:
+            printf("Saturday\n");
+            break;
+        default:
+            printf("Invalid input. Please enter a number between 1 and 7.\n");
+            break;
+    }
+
+    return 0;
+}
+   
+    
+9. Write a C program to check Even or Odd number using switch case.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("9. Write a C program to check Even or Odd number using switch case\n");
+	int num;
+	printf("enter the number :");
+	scanf("%d",&num);
+	switch(num % 2)
+	{
+		case 0:
+			printf("the  given number is even");
+			break;
+		case 1:
+			printf("the given number is odd");
+			break;
+			
+		default:
+			printf("invalid input");
+			break;
+			
+		
+	}
+	return 0;
+}
+
+10. Any year is input through the keyboard. Write a program to determine whether the year is a leap 
+year or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("10. Write a program to determine whether the year is a leap year or not.\n");
+	int year;
+	printf(" enter the year:");
+	scanf("%d",&year);
+	
+	if((year%4 == 0 && year%100 !=0)||(year%400==0))
+	{
+		printf("%d is a leap year",year);
+	}
+	else
+	printf("%d  is not  a leap year",year);
+	
+	return 0;
+}
+
+11. Given three points (x1, y1), (x2, y2) and (x3, y3), write a program to check if all the three points fall 
+on one straight line. 
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("11. write a program to check if all the three points fall on one straight line. \n");
+	int x1,x2,x3,y1,y2,y3;
+	int slope1,slope2;
+	printf(" enter the value of x1,x2,x3:");
+	scanf("%d%d%d",&x1,&x2,&x3);
+	printf("enter the value of y1,y2,y3:");
+	scanf("%d%d%d",&y1,&y2,&y3);
+	
+	if ((y3 - y2) * (x2 - x1) == (y2 - y1) * (x3 - x2))
+        printf("falls on same line");
+    else
+        printf("does not fall in same line");
+return 0;
+}
+
+12. Given a point (x1, y1), write a program to check whether that point lies outside or inside or in circle 
+of radius r and center (h, k).
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("12. write a program to check whether that point lies outside or inside or in circle of radius r and center (h, k) \n");
+	float h, k, r, x, y, distance;  
+  
+    printf("Enter the center point(h,k):");  
+    scanf("%f%f", &h, &k);  
+  
+    printf("Enter radius of the circle:");  
+    scanf("%f", &r);  
+  
+    printf("Enter the point(x, y):");  
+    scanf("%f%f", &x, &y);  
+  
+    distance = sqrt( pow( (x - h), 2 ) + pow( (y - k), 2 ) );  
+	if(distance>r)
+    	{
+			printf("the given point lies outside the circle.");
+		}
+	else if (distance<r)
+	   {
+	     		printf("the given point lies inside the circle.");
+		 }
+   else if(distance=r)
+   {
+   	printf("the given point lies within the circle.");
+   }
+   else
+   
+   printf("input invalid.enter the valid number.");
+   
+   return 0;
+}
+
+13. Write a program to find out whether a triangle is quadratic, isosceles or scalene.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("13. Write a program to find out whether a triangle is quadratic, isosceles or scalene.\n");
+	int s1,s2,s3;
+	printf("enter all the three side of triangle:");
+	scanf("%d%d%d",&s1,&s2,&s3);
+	if(s1+s2>=s3 && s2+s3>=s1 && s1+s3>=s2)
+    {
+		if(s1 == s2 && s2==s3)
+	{ 
+	printf("it is a equilateral triangle.");
+	}
+	if((s1==s2)||(s1==s3)||(s2==s3))
+	{ printf("it is isosceles triangle.");
+	}
+	else
+	printf("it is a scalene triangle.");
+	}
+	return 0;
+    
+}
+
+14. Write a program to convert lowercase character to uppercase character.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("14. Write a program to convert lowercase character to uppercase character.\n");
+	char lowercaseChar, uppercaseChar;
+
+    printf("Enter a lowercase character: ");
+    scanf("%c", &lowercaseChar);
+
+    if (islower(lowercaseChar)) 
+	{
+        uppercaseChar = toupper(lowercaseChar);
+        printf("Uppercase equivalent: %c\n", uppercaseChar);
+    } else {
+        printf("Input is not a lowercase character.\n");
+    }
+
+    return 0;
+}
+15. To print even numbers between 0 to 100.
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("15. To print even numbers between 0 to 100.\n");
+	int i;
+	printf("the even number between 0-100 is.\n");
+	for(i=0;i<=100;i=i+2)
+	{
+		printf("%d\t",i);
+	}
+return 0;
+}
+
+16. To display odd number between 0 to 20.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("16. To display odd number between 0 to 20.\n");
+	int i;
+	printf("the odd no between 0-20 is:\n");
+	for(i=1;i<=20;i=i+2)
+	{
+		printf("%d\t",i);
+	}
+return 0;
+}
+
+17. To calculate sum of first 10 even numbers.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("17. To calculate sum of first 10 even numbers.\n");
+	int sum=0,i;
+	printf("the sum of first 10 number is:");
+	for(i=0;i<=10;i++)
+	{
+		sum=sum+i;
+	
+	}
+	printf("%d",sum);
+  return 0;
+}
+
+18. To find factorial of any number.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("18. To find factorial of any number.\n");
+	int num,i,f=1;
+ printf("enter the number which factorial you want to find:");
+ scanf("%d",&num);
+ if(num>0)
+ {
+ 	for
+	 (i=1;i<=num;i++)
+ 	{
+ 		f=f*i;
+	 }
+	 printf("the factorial of given number is=%d",f);
+ }
+ 
+ return 0;
+}
+
+19. To find the sum of digits of any number.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("19. To find the sum of digits of any number.\n");
+	int num ,sum =0,onum,digit;
+	printf("enter the number of digits:\n");
+	scanf("%d",&num);
+	onum=num;
+	while(num !=0)
+	{
+		digit= num%10;
+		sum=sum+digit;
+		num=num/10;
+	}
+	printf("the sum of digits of %d is \n %d.",onum,sum);
+	return 0;
+	
+}
+
+20. To display reverse of any number.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("20. To display reverse of any number.\n");
+	int num ,onum,rev=0,rem;
+	printf("enter the number which  you want to reverese:");
+	scanf("%d",&num);
+	onum=num;
+	while(num!=0)
+	{
+		rem=num%10;
+		rev=rev*10+rem;
+		num=num/10;
+	}
+	printf("the reverse of %d is %d",onum,rev);
+	return 0;
+}
+
+21. To find out sum of all numbers completely divisible by 5 among n numbers given by the user.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("21. To find out sum of all numbers completely divisible by 5 among n numbers given by the user.\n");
+	int n,i,sum = 0;
+
+    printf("Enter the number of values:");
+    scanf("%d", &n);
+	int num[n];
+    printf("Enter %d numbers:", n);
+    for ( i = 0; i < n; i++) 
+	{
+        scanf("%d", &num[i]);
+        if (num[i]% 5 == 0) 
+		{
+            sum =sum+num[i];
+        }
+    }
+
+    printf("Sum of numbers divisible by 5: %d\n", sum);
+
+    return 0;
+}
+
+22. To check whether the input number is prime or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("22. To check whether the input number is prime or not.\n");
+	int i,num; 
+	printf("enter the number:");
+	scanf("%d",&num);
+	 if(num>0)
+	 {
+	 for(i=2;i<10;i++)
+	 {
+	 if(num%i==0)
+	  {
+	  printf("it is  a prime number.");
+	  }
+	  else
+	  {
+printf("it is X a prime number.");
+	}  
+	 }
+	 }
+	 return 0;
+}
+
+23. To display all prime numbers less than 100.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("23. To display all prime numbers less than 100.\n");
+	int i,num; 
+	 for(i=2;i<100;i++)
+	 {
+		 if(i %2==0)
+	  	{
+	  		printf("%d\t",i);
+	  	}
+	}
+	return 0;
+}
+
+24. To check whether the entered number is Armstrong number or not.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("24. To check whether the entered number is Armstrong number or not.\n");
+	int num,rem,arm=0,onum;
+	printf("enter the number:");
+	scanf("%d",&num);
+	onum=num;
+	while(num!=0)
+	{
+		rem=num%10;
+		arm=arm+rem*rem*rem;
+		num=num/10;
+	}
+	if(onum==arm)
+	{
+		printf("the number %d is Armstrong number.",onum);
+		
+	}
+	else
+	{
+		printf("the number %d is X armstrong number.",onum);
+	}
+	return 0;
+}
+
+25. To print natural number up to 10. Also, print its square value of each and find sum of them.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("25. To print natural number up to 10. Also, print its square value of each and find sum of them.\n");
+    int sum = 0,sq,i; 
+    printf("Natural numbers up to 10 and their squares:\n");
+    for ( i = 1; i <= 10; i++) 
+	{
+        sq=i* i; 
+        printf("%d^2 = %d\n", i, sq);
+        sum=sum+sq; 
+    }
+
+    printf("Sum of squares: %d\n", sum);
+
+    return 0;
+}
+
+26. Write a C program to find the first and last digit of a number.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("26. Write a C program to find the first and last digit of a number.\n");
+    int number, firstDigit, lastDigit;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+    lastDigit = number % 10;
+    while (number >= 10) {
+        number =number/ 10;
+    }
+    firstDigit = number;
+
+    printf("First digit: %d\n", firstDigit);
+    printf("Last digit: %d\n", lastDigit);
+
+    return 0;
+}
+
+27. Write a C program to find sum of first and last digit of a number.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("27. Write a C program to find sum of first and last digit of a number.\n");
+    int number, firstDigit, lastDigit,s;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+    lastDigit = number % 10;
+    while (number >= 10) 
+	{
+        number=number/10;
+    }
+    firstDigit = number;
+	s=lastDigit+firstDigit;
+    printf("sum of last and first digit=%d", s);
+    return 0;
+}
+
+28. Write a C program to calculate product of digits of a number. 
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("28. Write a C program to calculate product of digits of a number. \n");
+    int num ,p=0,onum,digit;
+	printf("enter the number of digits:");
+	scanf("%d",&num);
+	onum=num;
+	while(num !=0)
+	{
+		digit= num%10;
+		p=p+digit;
+		num=num/10;
+	}
+	printf("the product of digits of %d is %d.",onum,p);
+	return 0;
+	
+}
+
+29. Write a C program to print multiplication table of any number. 
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("29. Write a C program to print multiplication table of any number.\n");
+   int num, range,i;
+
+    printf("Enter a number to generate its multiplication table: ");
+    scanf("%d", &num);
+
+    printf("Enter the range for the multiplication table: ");
+    scanf("%d", &range);
+
+    printf("Multiplication table for %d up to %d:\n", num, range);
+
+    for ( i = 1; i <= range; i++)
+	{
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+
+    return 0;
+}
+
+30. Write a C program to count the number of digits in a number.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("30. Write a C program to count the number of digits in a number.\n");
+    int num,count = 0;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    
+    if (num < 0) 
+	{
+        num = -num; 
+	}	
+        while (num != 0) {
+        num=num/ 10;
+        count++;
+    }
+
+    printf("Number of digits: %d\n", count);
+
+    return 0;
+}
+
+31. Write a C program to calculate the root of a Quadratic Equation.
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int main()
+{
+	printf("31. Write a C program to calculate the root of a Quadratic Equation.\n");
+	double a, b, c, discriminant, root1, root2, realPart, imagPart;
+    printf("Enter coefficients a, b and c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    discriminant = b * b - 4 * a * c;
+
+    if (discriminant > 0) 
+{
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        printf("root1 = %.2lf and root2 = %.2lf", root1, root2);
+    }
+
+
+    else if (discriminant == 0) 
+{
+        root1 = root2 = -b / (2 * a);
+        printf("root1 = root2 = %.2lf;", root1);
+ }
+    else 
+{
+        realPart = -b / (2 * a);
+        imagPart = sqrt(-discriminant) / (2 * a);
+        printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
+    }
+    return 0;
+} 
+
