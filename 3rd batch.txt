@@ -1,0 +1,696 @@
+Chapter 8: User Defined Functions
+1. Write a C program to generate the Fibonacci series upto 13th term using recursive 
+function. [2019]
+#include<stdio.h>
+#include<conio.h>
+int fibo(int );
+int main()
+{
+	printf("1. Write a C program to generate the Fibonacci series upto 13th term using recursive function.\n");
+	int n=13,i;
+	for(i=1;i<=n;i++)
+	{
+		printf("%d\t",fibo(i));
+	}
+	return 0;
+}
+int fibo(int n)
+{
+	if(n==1)
+	return 0;
+	else if(n==0)
+	return 1;
+	else
+	return fibo(n-1)+fibo(n-2);
+}
+
+2. Write a program to find smallest number from the array using function. [2020]
+#include<stdio.h>
+#include<conio.h>
+int findSmallest(int [], int);
+int main()
+{
+	printf("2. Write a program to find smallest number from the array using function.\n");
+    int arr[50], small, i, size;
+    printf("Array Size?");
+    scanf("%d", &size);
+    printf("Enter %d Array Elements: ", size);
+    for(i=0; i<size; i++)
+        scanf("%d", &arr[i]);
+    small=findSmallest(arr, size);
+    printf("\nSmallest Number = %d", small);
+    getch();
+    return 0;
+}
+int findSmallest(int arr[], int n)
+{
+    int i=0, small;
+    small=arr[i];
+    while(i<n)
+    {
+        if(small>arr[i])
+            small = arr[i];
+        i++;
+    }
+    return small;
+}
+
+3. Write a program to generate the following series using function: 
+sum=1+x/1!+x^2/2!+x^3/3!+⋯+x^n/n!
+
+#include <stdio.h>
+#include<math.h>
+int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int Sum(int x, int n) {
+    int sum = 1;
+    int i;
+    for (i = 1; i <= n; i++) {
+        sum += (int)(pow(x, i) / factorial(i));
+    }
+    return sum;
+}
+
+int main() 
+{
+	printf("3. Write a program to generate the following series using function\n");
+    int x, n;
+    printf("Enter the value of x: ");
+    scanf("%d", &x);
+    printf("Enter the number of terms in the series: ");
+    scanf("%d", &n);
+    int sum = Sum(x, n);
+    printf("Sum of the series =%d\n", sum);
+    return 0;
+}
+
+4. Write a recursive function to print the highest common factor of two numbers.
+#include<stdio.h>
+#include<conio.h>
+int hcf(int a, int b) 
+{
+    if (b != 0) 
+	{
+        return hcf(b, a % b);
+    } 
+	else 
+	{
+        return a;
+    }
+}
+int main() 
+{
+	printf("4. Write a recursive function to print the highest common factor of two numbers.\n");
+    int n1, n2;
+    printf("two numbers? ");
+    scanf("%d %d", &n1, &n2);
+    int r = hcf(n1, n2);	
+    printf("The highest common factor of %d and %d is %d", n1, n2, r);
+    return 0;
+}
+
+5. Write an iterative function to print nth Fibonacci number.
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	printf("5. Write an iterative function to print nth Fibonacci number.\n");
+	int n,i;
+	printf("no of term?");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
+	{
+		printf("%d\t",fibo(i));
+	}
+	return 0;
+}
+int fibo(int n)
+{
+	if(n==1)
+	return 0;
+	else if(n==0)
+	return 1;
+	else
+	return fibo(n-1)+fibo(n-2);
+}
+
+6. Write an iterative function to print factorial of any number.
+#include<stdio.h>
+int facto(int n);
+int main()
+ {
+	printf("6. Write an iterative function to print factorial of any number. \n");
+	int n;
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    printf("Factorial of %d = %d", n, facto(n));
+    return 0;
+}
+
+int facto(int n) {
+    if (n>=1)
+        return n*facto(n-1);
+    else
+        return 1;
+}
+
+7. Write a recursive to implement factorial using facto function.
+#include<stdio.h>
+int facto(int n);
+int main()
+ {
+    	printf("7. Write a recursive to implement factorial using facto function.\n");
+	int n;
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    printf("Factorial of %d = %d", n, facto(n));
+    return 0;
+}
+
+int facto(int n) {
+    if (n>=1)
+        return n*facto(n-1);
+    else
+        return 1;
+}
+
+8. Write a recursive function to find sum of digits of any number.
+#include<stdio.h>
+#include<conio.h>
+int sum (int a);
+ 
+int main()
+{
+	printf("8. Write a recursive function to find sum of digits of any number.\n");
+    int num, result;
+ 	printf("number? ");
+    scanf("%d", &num);
+    result = sum(num);
+    printf("Sum of digits in %d is %d\n", num, result);
+    return 0;
+}
+ 
+int sum (int num)
+{
+    if (num != 0)
+    {
+        return (num % 10 + sum (num / 10));
+    }
+    else
+    {
+       return 0;
+    }
+}
+
+Chapter 9: Pointers
+1. Write a C program to add two numbers using pointers.
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+	printf("1. Write a C program to add two numbers using pointers.\n");
+   int first, second, *p, *q, sum;
+   printf("Enter two integers to add\n");
+   scanf("%d%d", &first, &second);
+
+   p = &first;
+   q = &second;
+
+   sum = *p + *q;
+
+   printf("Sum of the numbers = %d\n", sum);
+	return 0;
+}
+
+2. Write a C program to swap two numbers using function and pointers illustrating 
+pass by value and pass by reference.
+#include<conio.h>
+#include<stdio.h>
+void swap(int *, int *); 
+int main()  
+{  
+	printf("2. Write a C program to swap two numbers using function and pointers illustrating pass by value and pass by reference.\n");
+    int a = 10;  
+    int b = 20;   
+    printf("Before swapping the values in main a = %d, b = %d\n",a,b);
+    swap(&a,&b);  
+    printf("After swapping values in main a = %d, b = %d\n",a,b); 
+    return 0;
+}  
+void swap (int *a, int *b)  
+{  
+    int temp;   
+    temp = *a;  
+    *a=*b;  
+    *b=temp;  
+    printf("After swapping values in function a = %d, b = %d\n",*a,*b);   
+}
+  
+3. Write a C program to input and print array elements using pointer.
+#include<conio.h>
+#include<stdio.h>
+void swap(int *, int *); 
+int main()  
+{  
+	printf("3. Write a C program to input and print array elements using pointer.\n");
+    int arr[4];
+    int i;
+    int * ptr = arr;   
+  
+    printf("Enter elements in array:\n");
+    for (i = 0; i < 4; i++)
+    {
+        scanf("%d", ptr);
+
+        ptr++;   
+    }
+
+    ptr = arr;
+
+    printf("Array elements: ");
+    for (i = 0; i <4; i++)
+    {
+        printf("%d\t ", *ptr);
+
+        ptr++;
+    }
+
+    return 0;
+}
+
+4. Write a C program to store the 10 integers into memory and find out minimum and 
+maximum using dynamic memory allocation. (DMA) [2019 & 2021]
+#include<stdio.h> 
+#include<stdlib.h> 
+int main() 
+{ 
+	printf("4. Write a C program to store the 10 integers into memory and find out minimum and maximum using dynamic memory allocation.\n");
+	int arr_size, *arr, max, min,i; 
+	printf("size of the array? "); 
+	scanf("%d", &arr_size); 
+ 
+	arr = (int*) calloc(arr_size, sizeof(int)); 
+ 	printf("Enter the array: "); 
+	for( i = 0; i < arr_size; i++) { 
+		scanf("%d", (arr+i)); 
+	} 
+ 
+ 	max = arr[0]; 
+	for( i = 0; i < arr_size; i++) { 
+		if(max > arr[i]) { 
+			max = arr[i]; 
+		} 
+	} 
+ 
+	min = arr[0]; 
+	for( i = 0; i < arr_size; i++) { 
+		if(min < arr[i]) { 
+			min = arr[i]; 
+		} 
+	} 
+ 
+	printf("\nMaximum and minimum numbers in the array are: %d, %d\n", max, min);
+return 0; 
+}
+
+5. Write a C program to enter age of 20 students and count age between 18 and 25 from 
+the array using DMA functions. [2020]
+#include<stdio.h> 
+#include<stdlib.h> 
+int main()
+ { 
+ 	printf("5. Write a C program to enter age of 20 students and count age between 18 and 25 from the array using DMA functions. \n");
+	int arr_size, *arr, c=0,i; 
+ 
+	printf("Enter size of the array: "); 
+	scanf("%d", &arr_size); 
+ 
+	arr = (int*) calloc(arr_size, sizeof(int)); 
+ 
+	printf("\nEnter the array: "); 
+	for( i = 0; i < arr_size; i++) 
+	{ 
+		scanf("%d", (arr+i)); 
+	} 
+ 
+	 
+	for( i = 0; i < arr_size; i++) 
+	{ 
+		if(*(arr+i)>18&& *(arr+i)<25)
+		c++;
+	} 
+ 
+	printf("count age between 18 and 25 from the array= %d", c); 
+	return 0;
+}
+
+Chapter 10: Structure and Union	
+1. WAP to create a structure of employee having elements id, name and salary. Take 
+data for n employee and display record of those employee having name “Harke”. 
+#include<string.h>
+#include<stdio.h>
+int main()
+{
+	printf("1. WAP to create a structure of employee having elements id, name and salary. Take data for n employee and display record of those employee having name'harke'\n");
+	int n=3,i;
+	struct employee
+	{
+		int id;
+		char name[10];
+		int sal;
+	}e[n];
+	printf("enter records for %d employee\n",n);
+	for (i=0;i<n;i++)
+	{
+		printf("employee id?");
+		scanf("%d",&e[i].id);
+		printf("employee name?");
+		scanf("%s",e[i].name);
+		printf("employee salary?");
+		scanf("%d",&e[i].sal);
+		printf("\n");
+	}
+	for (i=0;i<n;i++)
+	{
+		if (strcmp(e[i].name,"harke")==0)
+		printf("id=%d\tname=%s\tsalary=Rs.%d\n",e[i].id,e[i].name,e[i].sal);
+	}
+	return 0;
+}
+
+2. Create a structure named course with name, code and credit_hours as its members. 
+WAP using this structure to read data of 5 courses and display data of those coursed 
+with credit_hour greater than 3.
+#include <stdio.h>
+struct course {
+    char name[50];
+    int code;
+    int credit_hours;
+};
+
+int main() 
+{
+		printf("2. Create a structure named course with name, code and credit_hours as its members. WAP using this structure to read data of 5 courses and display data of those coursed with credit_hour greater than 3.\n");
+	int i;
+    struct course courses[5];
+
+    printf("Enter data for 5 courses:\n");
+    for (i = 0; i < 5; ++i) {
+        printf("Course %d:\n", i + 1);
+        printf("Name: ");
+        scanf("%s", courses[i].name);
+        printf("Code: ");
+        scanf("%d", &courses[i].code);
+        printf("Credit Hours: ");
+        scanf("%d", &courses[i].credit_hours);
+        printf("\n");
+    }
+    printf("Courses with Credit Hours greater than 3:\n");
+    for (i = 0; i < 5; ++i) {
+        if (courses[i].credit_hours > 3) {
+            printf("Course %d:\n", i + 1);
+            printf("Name: %s\n", courses[i].name);
+            printf("Code: %d\n", courses[i].code);
+            printf("Credit Hours: %d\n", courses[i].credit_hours);
+            printf("\n");
+        }
+    }
+    return 0;
+}
+
+3. Write a program to show how structure can be passed through functions as a 
+parameter.
+#include <stdio.h>
+#include <string.h>
+ 
+struct student 
+{
+            int id;
+            char name[20];
+            float percentage;
+};
+ 
+void func(struct student record);
+ 
+int main() 
+{
+		printf("3. Write a program to show how structure can be passed through functions as a parameter.\n");
+            struct student record;
+ 
+            record.id=1;
+            strcpy(record.name, "ram");
+            record.percentage = 90;
+ 
+            func(record);
+            return 0;
+}
+ 
+void func(struct student record)
+{
+            printf(" Id is: %d \n", record.id);
+            printf(" Name is: %s \n", record.name);
+            printf(" Percentage is: %f \n", record.percentage);
+}
+
+4. Write a program to illustrate the use of pointer to structure.
+#include <stdio.h>
+struct person
+{
+   int age;
+   float weight;
+};
+
+int main()
+{
+	printf("4. Write a program to illustrate the use of pointer to structure.\n");
+    struct person *personPtr, person1;
+    personPtr = &person1;   
+
+    printf("Enter age: ");
+    scanf("%d", &personPtr->age);
+
+    printf("Enter weight: ");
+    scanf("%f", &personPtr->weight);
+
+    printf("output\n");
+    printf("Age: %d\n", personPtr->age);
+    printf("weight: %f", personPtr->weight);
+
+    return 0;
+}
+5. WAP to create a structure bank that has account name, number, address and  
+balance. Now find sum of balance of those people who lives in itahari.
+#include <stdio.h>
+#include <string.h>
+
+struct bank
+{
+    char accname[50];
+    float number;
+    char address[50];
+    int balance;
+};
+
+int main()
+{
+    	printf("5. WAP to create a structure bank that has account name, number, address and balance. Now find sum of balance of those people who lives in itahari.\n");
+	int numAccounts,i;
+
+    printf("Enter the number of bank accounts: ");
+    scanf("%d", &numAccounts);
+
+    struct bank accounts[numAccounts];
+
+    
+    for (i = 0; i < numAccounts; i++)
+    {
+        printf("\nEnter details for account %d:\n", i + 1);
+
+        printf("Name: ");
+        scanf("%s", accounts[i].accname);
+
+        printf("Number: ");
+        scanf("%f", &accounts[i].number);
+
+        printf("Address: ");
+        scanf("%s", accounts[i].address);
+
+        printf("Balance: ");
+        scanf("%d", &accounts[i].balance);
+    }
+
+    int sumBalance = 0;
+    for (i = 0; i < numAccounts; i++)
+    {
+        if (strcmp(accounts[i].address, "itahari") == 0)
+        {
+            sumBalance += accounts[i].balance;
+        }
+    }
+
+    printf("\nSum of balances for people who live in Itahari: %d\n", sumBalance);
+
+    return 0;
+}
+
+6. WAP to create a union and show input and output. 
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+	printf("6. WAP to create a union and show input and output.\n");
+	union employee
+	{
+		char name[20];
+		int age;
+		char address[20];
+	}emp;	
+	printf("enter your name\t");
+	scanf("%s",emp.name);
+	printf("name=%s\n",emp.name);
+	printf("enter your age\t");
+	scanf("%d",&emp.age);
+	printf("age=%d\n",emp.age);
+	printf("enter your address\t");
+	scanf("%s",emp.address);
+	printf("address=%s",emp.address);
+	return 0;	
+}
+
+Chapter 11: Data File Handling
+1. WAP to read a file and display the content of file.
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+	printf("1. WAP to read a file and display the content of file. \n");
+	FILE *fp;
+	char a[10];
+	fp=fopen("labc.txt","r");
+	fgets(a,10,fp);
+	printf("%s",a);
+	getch();
+	fclose(fp);
+	return 0;
+}
+
+2. WAP to write some content to file.
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+	printf("2.WAP to write some content to file. \n");
+	FILE *fp;
+	char a[10];
+	fp=fopen("labc.txt","w");
+	 gets(a);
+	fputs(a,fp);
+	getch();
+	fclose(fp);
+	return 0;
+}
+
+3. WAP to append some content in file.
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+	printf("3. WAP to append some content in file.\n");
+	FILE *fp;
+	char a[10];
+	fp=fopen("labc.txt","a");
+	 gets(a);
+	fputs(a,fp);
+	getch();
+	fclose(fp);
+	return 0;
+}
+
+4. WAP to read from a file and write it to another file.
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+	printf("4.	WAP to read from a file and write it to another file.\n");
+	FILE *fp,*fc;
+	char a[10];
+	fp=fopen("labc.txt","r");
+	fc=fopen("labc1.txt","w");
+	fgets(a,10,fp);
+	fputs(a,fc);
+	getch();
+	getch();
+	fclose(fc);
+	fclose(fp);
+	printf("done");
+	return 0;
+}
+
+Chapter 12 – Introduction to Graphics
+1. WAP to draw a circle using graphics function of radius 10 units.
+#include<conio.h>
+#include<stdio.h>
+#include<graphics.h>
+int main()
+{
+	printf("1. WAP to draw a circle using graphics function of radius 10 units.\n");
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"");
+	circle(20,20,10);
+	getch();
+	closegraph();
+	return 0;	
+}
+
+2. WAP to draw two concentric circles using graphics function.
+#include<conio.h>
+#include<stdio.h>
+#include<graphics.h>
+int main()
+{
+	printf("2. WAP to draw two concentric circles using graphics function.\n");
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"");
+	circle(50,50,10);
+	circle(50,50,30);
+	getch();
+	closegraph();
+	return 0;	
+}
+
+3. WAP to draw a rectangle.
+#include<conio.h>
+#include<stdio.h>
+#include<graphics.h>
+int main()
+{
+	printf("3. WAP to draw a rectangle.\n");
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"");
+	rectangle(150,250,450,350);
+	getch();
+	closegraph();
+	return 0;	
+}
+
+4. WAP to draw a ellipse and write “BCA” inside it.
+#include<conio.h>
+#include<stdio.h>
+#include<graphics.h>
+int main()
+{
+	printf("4. WAP to draw a ellipse and write "BCA" inside it.\n");
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"");
+	ellipse(50,50,0,360,50,25);
+	outextxy(30,40,"BCA");
+	getch();
+	closegraph();
+	return 0;	
+}
